@@ -27,7 +27,7 @@ async getProducts(){
        const {id} = item.sys;
        const image = item.fields.image.fields.file.url;
        return {title,price,id,image};
-   })
+   });
    return products;
 } catch(error){
     
@@ -51,7 +51,7 @@ class UI{
                </button> 
             </div>
             <h3>${product.title}</h3>
-            <h4>${product.price}</h4>
+            <h4>${product.price} €</h4>
              </article>
 
          `
@@ -64,7 +64,9 @@ class UI{
 
 //local storage
 class Storage{
-
+ static saveProducts(products){
+     localStorage.setItem("products",JSON.stringify(products));
+ }
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -72,9 +74,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const products = new Products();
 
     //get all Products
-    products.getProducts().then (products => ui.displayProducts(products));
+    products.getProducts().then (products => {
+        ui.displayProducts(products);
+        Storage.saveProducts(products);
 
-})
+   });
+});
 
 
 
