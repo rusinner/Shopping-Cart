@@ -9,10 +9,11 @@ const cartItems = document.querySelector(".cart-items");
 const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const ProductsDOM = document.querySelector(".products-center");
-
+const btns = document.querySelectorAll(".bag-btn");
 // cart
 let cart = [];
-
+//buttons
+let buttonsDOM = [];
 
 //getting the products
 class Products{
@@ -58,7 +59,31 @@ class UI{
         } );
         ProductsDOM.innerHTML = result;
     }
+   getBagButtons(){
+    const buttons =[...document.querySelectorAll(".bag-btn")];
+   buttons.forEach(button =>{
+       let id = button.dataset.id;
+       let inCart = cart.find(item =>item.id === id);
+       if(inCart){
+           button.innerText = "In Cart";
+           button.disabled = true;
+       }
+       //εδω παραλειπω το else γιατί δε χρειάζεται.απλά τσεκάρει το if
+           button.addEventListener('click',(event)=>{
+               event.target.innerText = "In Cart";
+               event.target.disabled = true;
+               //get product from products
+               //add product to the cart
+               //save cart in local storage
+               //set cart values 
+               //display cart item
+               //show the cart
 
+           });
+      
+   });
+
+   }
 }
 
 
@@ -78,6 +103,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         ui.displayProducts(products);
         Storage.saveProducts(products);
 
+   }).then(()=>{
+       ui.getBagButtons();
    });
 });
 
