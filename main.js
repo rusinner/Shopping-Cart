@@ -139,9 +139,9 @@ setupAPP(){
    cart.forEach(item => this.addCartItem(item)) ;
       }
       hideCart(){
-        console.log("tjis");
-     // cartOverlay.classList.remove("transparentBcg");
-     // cartDOM.classList.remove("showCart");
+        
+     cartOverlay.classList.remove("transparentBcg");
+     cartDOM.classList.remove("showCart");
  }
    
 }
