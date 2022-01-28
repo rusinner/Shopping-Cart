@@ -88,10 +88,8 @@ class UI{
                this.addCartItem(cartItem);
                //show the cart
                this.showCart();
-
-           });
-      
-   });
+                });
+            });
 
    }
    setCartValue(cart){
@@ -120,8 +118,8 @@ class UI{
           <i class="fas fa-chevron-down" data-id = ${item.id}></i>
       </div>`;
 
-      cartContent.appendChild(div);
-
+    cartContent.appendChild(div);
+        
 
    }
    showCart(){
@@ -129,28 +127,22 @@ class UI{
      cartDOM.classList.add("showCart");
 }
 
-    hideCart() {
-    cartOverlay.classList.remove("transparentBcg");
-    cartDOM.classList.remove("showCart");
-}
-
-
-  
-setupAPP(){
+   setupAPP(){
     cart = Storage.getCart();
     this.setCartValue(cart);
     this.populateCart(cart);
     cartBtn.addEventListener("click",this.showCart);
     closeCartBtn.addEventListener("click" ,this.hideCart);
-}
+  }
    populateCart(cart){
    cart.forEach(item => this.addCartItem(item)) ;
       }
-       
+      hideCart() {
+        cartOverlay.classList.remove("transparentBcg");
+        cartDOM.classList.remove("showCart");
     }
+}
 
-
- 
 
 //local storage
 class Storage{
@@ -172,7 +164,8 @@ class Storage{
 document.addEventListener("DOMContentLoaded", ()=>{
     const ui = new UI();
     const products = new Products();
-    
+    //setup app
+    ui.setupAPP();
      //get all Products
     products.getProducts().then (products => {
         ui.displayProducts(products);
