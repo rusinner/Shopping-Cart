@@ -1,5 +1,4 @@
 //variables
-
 const cartBtn = document.querySelector(".cart-btn");
 const closeCartBtn = document.querySelector(".close-cart");
 const clearCartBtn = document.querySelector(".clear-cart");
@@ -10,6 +9,8 @@ const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const ProductsDOM = document.querySelector(".products-center");
 const btns = document.querySelectorAll(".bag-btn");
+
+
 // cart
 let cart = [];
 //buttons
@@ -127,24 +128,29 @@ class UI{
      cartOverlay.classList.add("transparentBcg");
      cartDOM.classList.add("showCart");
 }
+
+    hideCart() {
+    cartOverlay.classList.remove("transparentBcg");
+    cartDOM.classList.remove("showCart");
+}
+
+
   
 setupAPP(){
     cart = Storage.getCart();
     this.setCartValue(cart);
     this.populateCart(cart);
     cartBtn.addEventListener("click",this.showCart);
-    closeCartBtn.addEventListener("click",this.hideCart);
+    closeCartBtn.addEventListener("click" ,this.hideCart);
 }
    populateCart(cart){
    cart.forEach(item => this.addCartItem(item)) ;
       }
-      hideCart(){
-        
-     cartOverlay.classList.remove("transparentBcg");
-     cartDOM.classList.remove("showCart");
- }
-   
-}
+       
+    }
+
+
+ 
 
 //local storage
 class Storage{
