@@ -141,6 +141,19 @@ class UI{
         cartOverlay.classList.remove("transparentBcg");
         cartDOM.classList.remove("showCart");
     }
+    cartLogic(){
+        //clear cart button
+        clearCartBtn.addEventListener("click",() => {
+            this.clearCart();
+        });
+        cart
+    }
+    clearCart(){
+        let cartItems = cart.map(item => item.id);
+        cartItems.forEach(id => this.removeItem(id))
+        
+    }
+    removeItem()
 }
 
 
@@ -173,6 +186,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
    }).then(()=>{
        ui.getBagButtons();
+       ui.cartLogic();
    });
 });
 
