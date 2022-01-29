@@ -9,6 +9,9 @@ const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const ProductsDOM = document.querySelector(".products-center");
 const btns = document.querySelectorAll(".bag-btn");
+const menuBtn = document.querySelector(".nav-icon");
+const menuDOM = document.querySelector(".menu");
+const menuOverlay = document.querySelector(".menu-overlay"); 
 
 
 // cart
@@ -127,12 +130,18 @@ class UI{
      cartDOM.classList.add("showCart");
 }
 
+showMenu(){
+    menuOverlay.classList.add("transparentBcg");
+    menuDOM.classList.add(".showMenu");
+}
+
    setupAPP(){
     cart = Storage.getCart();
     this.setCartValue(cart);
     this.populateCart(cart);
     cartBtn.addEventListener("click",this.showCart);
     closeCartBtn.addEventListener("click" ,this.hideCart);
+    menuBtn.addEventListener("click",this.showMenu);
   }
    populateCart(cart){
    cart.forEach(item => this.addCartItem(item)) ;
