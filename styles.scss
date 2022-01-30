@@ -7,7 +7,6 @@
   --mainGrey: #ececec;
   --mainSpacing: 0.1rem;
   --mainTransition: all 0.3s linear;
-  --secondTransition:all 2s ease ;
 }
 * {
   margin: 0;
@@ -18,6 +17,7 @@ body {
   color: var(--mainBlack);
   background: var(--mainWhite);
   font-family: "Lato", sans-serif;
+  overflow-x: hidden;
 }
 /* --------------- Navbar ---------------- */
 .navbar {
@@ -175,7 +175,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  transition: var(--secondTransition);
+  transition: var(--mainTransition);
   background: rgba(240, 157, 81, 0.5);
   z-index: 2;
    visibility: hidden;
@@ -184,18 +184,17 @@ body {
 .menu{
   position: fixed;
   margin-top: 0;
-  
   width: 100%;
   height: 100%;
   z-index: 3;
   background: rgb(231, 226, 221);
   padding: 1.5rem;
-  transition: var(--secondTransition);
+  transition: var(--mainTransition);
   transform: translateX(-5%);
 }
 
 .showMenu{
-  transform: translateX(0);
+  transform: translateX(10%);
 }
 
 
@@ -245,6 +244,9 @@ body {
   .menu {
     width: 10vw;
     min-width: 450px;
+  }
+  .products-center {
+    width:100vw;
   }
 }
 
