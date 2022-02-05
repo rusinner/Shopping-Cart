@@ -227,6 +227,16 @@ body {
     width: 30vw;
     min-width: 450px;
   }
+<<<<<<< Updated upstream
+=======
+  .menu {
+    width: 5vw;
+    min-width: 450px;
+  }
+  .products-center {
+    width: 100vw;
+  }
+>>>>>>> Stashed changes
 }
 .close-cart {
   font-size: 1.7rem;
