@@ -183,6 +183,7 @@ body {
 
 .menu{
   position: fixed;
+  
   top: 0;
   left:0;
   width: 20vw;
@@ -192,7 +193,10 @@ body {
   padding: 1.5rem;
   transition: var(--mainTransition);
   transform: translateX(-100%);
-  span{cursor:pointer;}
+  span{
+    position:fixed;
+    cursor:pointer;
+  transform:translateX(15vw);}
 }
 
 .showMenu{

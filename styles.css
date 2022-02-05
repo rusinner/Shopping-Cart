@@ -241,7 +241,10 @@ body {
 }
 
 .menu span {
+  position: fixed;
   cursor: pointer;
+  -webkit-transform: translateX(15vw);
+          transform: translateX(15vw);
 }
 
 .showMenu {
