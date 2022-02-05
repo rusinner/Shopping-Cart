@@ -293,13 +293,13 @@ body {
   visibility: visible;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .cart {
     width: 30vw;
     min-width: 450px;
   }
   .menu {
-    width: 20vw;
+    width: 100vw;
     min-width: 450px;
   }
   .products-center {
