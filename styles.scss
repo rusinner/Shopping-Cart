@@ -207,6 +207,18 @@ body {
 .closeMenu{transform:translateX(-100%);
 }
 
+#menu-list{display:block;
+  position: relative;
+width:100%;
+height:100%;
+padding:10%;
+:nth-child(1){cursor: pointer;}
+:nth-child(2){cursor: pointer;}
+:nth-child(3){cursor: pointer;}
+:nth-child(4){cursor: pointer;}
+
+
+}
 
 
 

@@ -14,7 +14,7 @@ const menuDOM = document.querySelector(".menu");
 const menuOverlay = document.querySelector(".menu-overlay"); 
 const closeMenuBtn = document.querySelector(".close-menu");
 
-
+ 
 // cart
 let menu;
 let cart = [];
@@ -65,6 +65,8 @@ class UI{
         } );
         ProductsDOM.innerHTML = result;
     }
+
+    
    getBagButtons(){
     const buttons =[...document.querySelectorAll(".bag-btn")];
     buttonsDOM = buttons;
@@ -97,6 +99,8 @@ class UI{
             });
 
    }
+
+   
    setCartValue(cart){
     let tempTotal = 0;
     let itemsTotal = 0;
@@ -151,6 +155,17 @@ menuDOM.classList.remove("showMenu");}
     cartBtn.addEventListener("click",this.showCart);
     closeCartBtn.addEventListener("click" ,this.hideCart);
   }
+   createMenuList(){
+    const menuList = ['Home' , 'Furniture' , "Customize" , "Contact us"];
+    const menuUl = document.createElement("ul");
+    menuUl.setAttribute("id","menu-list");
+    for ( let i = 0; i <= menuList.length -1 ; i++){
+        const menuLi = document.createElement("li");
+        menuLi.innerHTML = menuList[i];
+        menuUl.appendChild(menuLi);
+    }
+    menuDOM.appendChild(menuUl);
+    }
 
   setupMENU(){
     menuBtn.addEventListener("click" ,this.showMenu );
@@ -225,7 +240,10 @@ closeMenuBtn.addEventListener("click",this.closeMenu);
     getSingleButton(id){
         return buttonsDOM.find(button => button.dataset.id ===id);
     }
-}
+
+    
+}//create menu list
+
 
 
 //local storage
@@ -252,6 +270,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     ui.setupAPP();
     //setup menu
     ui.setupMENU();
+    //setup menu list
+    ui.createMenuList();
      //get all Products
     products.getProducts().then (products => {
         ui.displayProducts(products);

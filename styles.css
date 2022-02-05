@@ -257,6 +257,30 @@ body {
           transform: translateX(-100%);
 }
 
+#menu-list {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 10%;
+}
+
+#menu-list :nth-child(1) {
+  cursor: pointer;
+}
+
+#menu-list :nth-child(2) {
+  cursor: pointer;
+}
+
+#menu-list :nth-child(3) {
+  cursor: pointer;
+}
+
+#menu-list :nth-child(4) {
+  cursor: pointer;
+}
+
 /* --------------- Cart ---------------- */
 .cart-overlay {
   position: fixed;
