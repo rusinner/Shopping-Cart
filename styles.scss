@@ -228,6 +228,7 @@ body {
   position: fixed;
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   top: 0;
   right: 0;
   width: 30vw;
@@ -236,7 +237,7 @@ body {
   background: rgb(231, 226, 221);
   padding: 1.5rem;
   transition: var(--mainTransition);
-  transform: translateX(100%);
+  transform: translateX(100vw);
 }
 .showCart {
   transform: translateX(0);
@@ -248,7 +249,6 @@ body {
   .cart {
     width: 100vw;
     max-width: 450px;
-    transform: translateX(104%);
 
   }
 

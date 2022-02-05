@@ -272,6 +272,7 @@ body {
   position: fixed;
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   top: 0;
   right: 0;
   width: 30vw;
@@ -281,8 +282,8 @@ body {
   padding: 1.5rem;
   -webkit-transition: var(--mainTransition);
   transition: var(--mainTransition);
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(100vw);
+          transform: translateX(100vw);
 }
 
 .showCart {
@@ -298,8 +299,6 @@ body {
   .cart {
     width: 100vw;
     max-width: 450px;
-    -webkit-transform: translateX(104%);
-            transform: translateX(104%);
   }
   .menu {
     width: 100vw;
