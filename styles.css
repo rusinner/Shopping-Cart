@@ -275,14 +275,14 @@ body {
   top: 0;
   right: 0;
   width: 30vw;
-  height: 102%;
+  height: 100%;
   z-index: 3;
   background: #e7e2dd;
   padding: 1.5rem;
   -webkit-transition: var(--mainTransition);
   transition: var(--mainTransition);
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateX(102%);
+          transform: translateX(102%);
 }
 
 .showCart {

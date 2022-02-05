@@ -231,12 +231,12 @@ body {
   top: 0;
   right: 0;
   width: 30vw;
-  height: 102%;
+  height: 100%;
   z-index: 3;
   background: rgb(231, 226, 221);
   padding: 1.5rem;
   transition: var(--mainTransition);
-  transform: translateX(100%);
+  transform: translateX(102%);
 }
 .showCart {
   transform: translateX(0);
