@@ -260,6 +260,9 @@ body {
 .menu {
   width: 100vw;
 max-width: 450px;
+span{position:fixed;
+  transform:translateX(80vw);
+}
   }
   .products-center {
     width:100vw;

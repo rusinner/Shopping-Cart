@@ -307,6 +307,11 @@ body {
     width: 100vw;
     max-width: 450px;
   }
+  .menu span {
+    position: fixed;
+    -webkit-transform: translateX(80vw);
+            transform: translateX(80vw);
+  }
   .products-center {
     width: 100vw;
   }
