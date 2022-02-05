@@ -281,8 +281,8 @@ body {
   padding: 1.5rem;
   -webkit-transition: var(--mainTransition);
   transition: var(--mainTransition);
-  -webkit-transform: translateX(102%);
-          transform: translateX(102%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 .showCart {
@@ -298,6 +298,8 @@ body {
   .cart {
     width: 100vw;
     max-width: 450px;
+    -webkit-transform: translateX(104%);
+            transform: translateX(104%);
   }
   .menu {
     width: 100vw;
