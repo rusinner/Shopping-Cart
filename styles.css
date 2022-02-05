@@ -229,7 +229,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 30vw;
+  width: 20vw;
   height: 100%;
   z-index: 3;
   background: #b99672;
@@ -270,11 +270,12 @@ body {
 
 .cart {
   position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
   top: 0;
   right: 0;
   width: 30vw;
   height: 100%;
-  overflow: scroll;
   z-index: 3;
   background: #e7e2dd;
   padding: 1.5rem;
