@@ -12,9 +12,11 @@ const btns = document.querySelectorAll(".bag-btn");
 const menuBtn = document.querySelector(".nav-icon");
 const menuDOM = document.querySelector(".menu");
 const menuOverlay = document.querySelector(".menu-overlay"); 
+const closeMenuBtn = document.querySelector(".close-menu");
 
 
 // cart
+let menu;
 let cart = [];
 //buttons
 let buttonsDOM = [];
@@ -130,18 +132,29 @@ class UI{
      cartDOM.classList.add("showCart");
 }
 
-showMenu(){
+    showMenu(){
     menuOverlay.classList.add("transparentBcg");
-    menuDOM.classList.add(".showMenu");
+    menuDOM.classList.add("showMenu");
 }
 
+
+closeMenu(){menuOverlay.classList.remove("transparentBcg");
+menuDOM.classList.remove("showMenu");}
+
+   
+
    setupAPP(){
+       
     cart = Storage.getCart();
     this.setCartValue(cart);
     this.populateCart(cart);
     cartBtn.addEventListener("click",this.showCart);
     closeCartBtn.addEventListener("click" ,this.hideCart);
-    menuBtn.addEventListener("click",this.showMenu);
+  }
+
+  setupMENU(){
+    menuBtn.addEventListener("click" ,this.showMenu );
+closeMenuBtn.addEventListener("click",this.closeMenu);
   }
    populateCart(cart){
    cart.forEach(item => this.addCartItem(item)) ;
@@ -188,6 +201,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const products = new Products();
     //setup app
     ui.setupAPP();
+    //setup menu
+    ui.setupMENU();
      //get all Products
     products.getProducts().then (products => {
         ui.displayProducts(products);
