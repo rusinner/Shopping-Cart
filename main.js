@@ -9,9 +9,14 @@ const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const ProductsDOM = document.querySelector(".products-center");
 const btns = document.querySelectorAll(".bag-btn");
+const menuBtn = document.querySelector(".nav-icon");
+const menuDOM = document.querySelector(".menu");
+const menuOverlay = document.querySelector(".menu-overlay"); 
+const closeMenuBtn = document.querySelector(".close-menu");
 
-
+ 
 // cart
+let menu;
 let cart = [];
 //buttons
 let buttonsDOM = [];
@@ -60,6 +65,8 @@ class UI{
         } );
         ProductsDOM.innerHTML = result;
     }
+
+    
    getBagButtons(){
     const buttons =[...document.querySelectorAll(".bag-btn")];
     buttonsDOM = buttons;
@@ -92,6 +99,8 @@ class UI{
             });
 
    }
+
+   
    setCartValue(cart){
     let tempTotal = 0;
     let itemsTotal = 0;
@@ -127,12 +136,40 @@ class UI{
      cartDOM.classList.add("showCart");
 }
 
+    showMenu(){
+    menuOverlay.classList.add("transparentBcg");
+    menuDOM.classList.add("showMenu");
+}
+
+
+closeMenu(){menuOverlay.classList.remove("transparentBcg");
+menuDOM.classList.remove("showMenu");}
+
+   
+
    setupAPP(){
+       
     cart = Storage.getCart();
     this.setCartValue(cart);
     this.populateCart(cart);
     cartBtn.addEventListener("click",this.showCart);
     closeCartBtn.addEventListener("click" ,this.hideCart);
+  }
+   createMenuList(){
+    const menuList = ['Home' , 'Furniture' , "Customize" , "Contact us"];
+    const menuUl = document.createElement("ul");
+    menuUl.setAttribute("id","menu-list");
+    for ( let i = 0; i <= menuList.length -1 ; i++){
+        const menuLi = document.createElement("li");
+        menuLi.innerHTML = menuList[i];
+        menuUl.appendChild(menuLi);
+    }
+    menuDOM.appendChild(menuUl);
+    }
+
+  setupMENU(){
+    menuBtn.addEventListener("click" ,this.showMenu );
+closeMenuBtn.addEventListener("click",this.closeMenu);
   }
    populateCart(cart){
    cart.forEach(item => this.addCartItem(item)) ;
@@ -203,7 +240,10 @@ class UI{
     getSingleButton(id){
         return buttonsDOM.find(button => button.dataset.id ===id);
     }
-}
+
+    
+}//create menu list
+
 
 
 //local storage
@@ -228,6 +268,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const products = new Products();
     //setup app
     ui.setupAPP();
+    //setup menu
+    ui.setupMENU();
+    //setup menu list
+    ui.createMenuList();
      //get all Products
     products.getProducts().then (products => {
         ui.displayProducts(products);
