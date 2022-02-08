@@ -117,7 +117,7 @@ body {
 .img-container {
   position: relative;
   overflow: hidden;
-  border:2px solid #902bf5;
+  border:2px solid #fc7b54;
 }
 .bag-btn {
   position: absolute;
@@ -178,6 +178,7 @@ body {
   height: 100%;
   transition: var(--mainTransition);
   background: #31bacd;
+  opacity:0.7;
   z-index: 2;
    visibility: hidden;
 }
