@@ -35,6 +35,7 @@ async getProducts(){
        const image = item.fields.image.fields.file.url;
        return {title,price,id,image};
    });
+
    return products;
 } catch(error){
     
