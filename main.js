@@ -156,6 +156,7 @@ menuDOM.classList.remove("showMenu");}
     cartBtn.addEventListener("click",this.showCart);
     closeCartBtn.addEventListener("click" ,this.hideCart);
   }
+  
    createMenuList(){
     const menuList = ['Home' , 'Furniture' , "Customize" , "Contact us"];
     const menuUl = document.createElement("ul");
